@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'square';
+  listo = false;
+  nombre:string = '';
+  constructor() {
+  setTimeout(() => {
+    this.listo = true;
+  }, 3000)
+  }
+  hacerAlgo(){
+    alert('hacer')
+  }
 }
