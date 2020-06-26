@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'square';
   listo = false;
-  nombre:string = '';
+  nombre: string = '';
+  lugares: any = [
+    {nombre: "Floristería"},
+    {nombre: "Pajarería"},
+    {nombre: "Veterinario"}
+  ]
+
   constructor() {
-  setTimeout(() => {
-    this.listo = true;
-  }, 3000)
+    setTimeout(() => {
+      this.listo = true;
+    }, 3000)
   }
-  hacerAlgo(){
+
+  hacerAlgo() {
     alert('hacer')
   }
 }
