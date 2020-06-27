@@ -1,4 +1,9 @@
-agm-map{
+agm-map {
     height: 300px;
     width: 300px;
+}
+
+.numero_par {
+    background-color: aliceblue;
+    color: blue;
 }

@@ -355,7 +355,31 @@
   <div>
     <ul>
       <ng-container *ngFor="let lugar of lugares">
-        <li><span *ngIf="nombre !== ''">{{nombre}}:</span> {{lugar.nombre}}</li>
+        <li *ngIf="lugar.activo">{{lugar.nombre}}</li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
+      <ng-container *ngFor="let lugar of lugares">
+        <li [ngStyle]="{color: (lugar.activo) ? 'black' : 'grey'}">{{lugar.nombre}}</li>
+      </ng-container>
+    </ul>
+  </div>
+
+
+  <div>
+    <ul>
+      <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
+        <li
+            [ngStyle]="{color: (lugar.activo) ? 'black' : 'grey'}"
+            [ngClass]="{numero_par: (i+1) % 2 !== 0}">
+          {{lugar.nombre}} -
+          <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Cercano</span>
+          <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Medio</span>
+          <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
+        </li>
       </ng-container>
     </ul>
   </div>
