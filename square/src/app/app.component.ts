@@ -10,11 +10,11 @@ export class AppComponent {
   listo = false;
   nombre: string = '';
   lugares: any = [
-    {cercania:1, distancia: 1, activo: true, nombre: "Floristería"},
-    {cercania:1, distancia: 1.8, activo: false, nombre: "Pajarería"},
-    {cercania:2, distancia: 5, activo: true, nombre: "Veterinario"},
-    {cercania:2, distancia: 10, activo: true, nombre: "Centro Comercia"},
-    {cercania:3, distancia: 30, activo: true, nombre: "Cine"}
+    {plan: 'gratuito', cercania:1, distancia: 1, activo: true, nombre: "Floristería"},
+    {plan: 'gratuito', cercania:1, distancia: 1.8, activo: false, nombre: "Pajarería"},
+    {plan: 'pago', cercania:2, distancia: 5, activo: true, nombre: "Veterinario"},
+    {plan: 'gratuito', cercania:2, distancia: 10, activo: true, nombre: "Centro Comercia"},
+    {plan: 'pago', cercania:3, distancia: 30, activo: true, nombre: "Cine"}
   ];
 
   lat: number = 40.4381311;
