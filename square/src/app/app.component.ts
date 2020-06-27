@@ -13,7 +13,10 @@ export class AppComponent {
     {nombre: "Floristería"},
     {nombre: "Pajarería"},
     {nombre: "Veterinario"}
-  ]
+  ];
+
+  lat: number = 40.4381311;
+  lng: number = -3.8196192;
 
   constructor() {
     setTimeout(() => {
