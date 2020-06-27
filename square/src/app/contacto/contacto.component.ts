@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-detalle',
-  templateUrl: './detalle.component.html'
+  selector: 'app-contacto',
+  templateUrl: './contacto.component.html'
 })
-export class DetalleComponent {
+export class ContactoComponent {
 
   lugares: any = [
     {
