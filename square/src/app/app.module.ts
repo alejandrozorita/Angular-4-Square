@@ -7,12 +7,21 @@ import {FormsModule} from "@angular/forms";
 import {AgmCoreModule} from '@agm/core';
 import {ResaltarDirective} from "./directives/resaltar.directive";
 import {ContarClicksDirective} from "./directives/contar-clicks.directive";
+import {RouterModule, Routes} from "@angular/router";
+import {DetalleComponent} from "./detalle/detalle.component";
+import {LugaresComponent} from "./lugares/lugares.component";
 
+const appRoutes: Routes = [
+  {path:'lugares', component: LugaresComponent},
+  {path:'detalle/:id', component: DetalleComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     ResaltarDirective,
-    ContarClicksDirective
+    ContarClicksDirective,
+    DetalleComponent,
+    LugaresComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +29,8 @@ import {ContarClicksDirective} from "./directives/contar-clicks.directive";
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDc1etgGo9gexg7uylvn2xu4f4DUhLd7rM'
-    })
+    }),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

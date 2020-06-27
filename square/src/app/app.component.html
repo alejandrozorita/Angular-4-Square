@@ -6,66 +6,13 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="lugares">Inicio <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="detalle">Detalle</a>
       </li>
     </ul>
   </div>
 </nav>
-<h2>Mapa</h2>
-<agm-map
-    [latitude]="lat"
-    [longitude]="lng">
-</agm-map>
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <h2>Lugares cercanos</h2>
-      <ul class="list-group">
-        <ng-container *ngFor="let lugar of lugares">
-          <li class="list-group-item" *ngIf="lugar.activo">{{lugar.nombre}}</li>
-        </ng-container>
-      </ul>
-    </div>
-    <div class="col-4">
-      <h2>Lugares destacados</h2>
-    </div>
-  </div>
-
-  <button [disabled]="listo">click me</button>
-  <button (click)="hacerAlgo()">click me</button>
-
-  <hr>
-  <input type="text" placeholder="tu nombre" [(ngModel)]="nombre">
-  <br>
-  <p>Mi nobre es {{nombre}}</p>
-  <div>
-    <ul class="list-group">
-      <ng-container *ngFor="let lugar of lugares">
-        <li class="list-group-item" [ngStyle]="{color: (lugar.activo) ? 'black' : 'grey'}">{{lugar.nombre}}</li>
-      </ng-container>
-    </ul>
-  </div>
-
-  <div>
-    <ul>
-      <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
-        <a>
-          <li
-              contar-clicks
-              [ngStyle]="{color: (lugar.activo) ? 'black' : 'grey'}"
-              [ngClass]="{numero_par: (i+1) % 2 !== 0}"
-              [resaltar]="lugar.plan">
-            {{lugar.nombre}} -
-            <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Cercano</span>
-            <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Medio</span>
-            <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
-          </li>
-        </a>
-      </ng-container>
-    </ul>
-  </div>
-</div>
+<router-outlet></router-outlet>
