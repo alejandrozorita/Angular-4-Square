@@ -4,15 +4,21 @@
 <div class="container">
 
   <label for="nombre">Nombre</label>
-  <input type="text" id="nombre" name="nombre" class="form-control">
+  <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="lugar.nombre">
+  <br>
+  <label for="distancia">Distancia</label>
+  <input type="text" id="distancia" name="distancia" class="form-control" [(ngModel)]="lugar.distancia">
+  <br>
+  <label for="cercania">Cercanía</label>
+  <input type="text" id="cercania" name="cercania" class="form-control" [(ngModel)]="lugar.cercania">
+  <br>
+  <label for="plan">Plan</label>
+  <input type="text" id="plan" name="plan" class="form-control" [(ngModel)]="lugar.plan">
+  <br>
+  <label for="descripcion">Descripción</label>
+  <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" [(ngModel)]="lugar.descripcion"></textarea>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" class="form-control">
-
-  <label for="mensaje">mensaje</label>
-  <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
-
-  <a href="" class="btn btn-primary">Enviar</a>
-  <a href="" class="btn btn-light" routerLink="/lugares">Cancelar</a>
+  <a class="btn btn-primary" (click)="guardarLugar()">Enviar</a>
+  <a class="btn btn-light" routerLink="/lugares">Cancelar</a>
 
 </div>

@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
+import {AngularFireDatabase} from "@angular/fire/database";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LugaresService {
-  constructor() {
+  constructor(private afDB: AngularFireDatabase) {
   }
 
   lugares: any = [
@@ -63,5 +64,10 @@ export class LugaresService {
     return this.lugares.filter((lugar) => {
       return lugar.id == id
     })[0] || null;
+  }
+
+  public guardarLugar(lugar) {
+    console.log(lugar)
+    this.afDB.database.ref('lugares/' + lugar.id).set(lugar)
   }
 }
