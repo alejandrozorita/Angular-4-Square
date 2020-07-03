@@ -16,7 +16,15 @@ export class LugaresComponent {
   lng: number = -3.8196192;
 
   constructor(private  lugaresService: LugaresService) {
-    this.lugares = lugaresService.getLugares();
+    lugaresService.getLugares().subscribe((lugares) => {
+      this.lugares = lugares;
+    })
+
+    const lugaresObservable = lugaresService.getLugares();
+    lugaresObservable.subscribe((lugares) => {
+      console.log(lugares)
+      this.lugares = lugares;
+    });
   }
 
   hacerAlgo() {
